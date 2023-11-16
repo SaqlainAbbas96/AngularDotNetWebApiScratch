@@ -1,0 +1,43 @@
+﻿@model WebApi.Models.Facebook
+
+@{
+    ViewBag.Title = "AddComments";
+
+}
+
+<h2>Add Comments</h2>
+
+
+    <div class="container">
+        <div class="row">
+            <form>
+                <div class="form-group">
+                    <label for="comments">Comments</label>
+                    <input type="text" class="form-control comments" id="" name="comments">
+                </div>
+
+                <button type="button" class="btn btn-primary" id="add">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#add').click(function () {
+            debugger;
+            var comment = $('.comments').val();
+            alert(comment);
+            $('.commentVal').val(comment);
+
+            var table = $(this).closest('div');
+            if (table.find('input:text').length < 7) {
+                //table.append('<tr><td style="width:200px;"> <td> <input type="text" class="form-control" id="current Name" value="" /> </td></tr>');
+                if (comment != null)
+                    table.append('<input type="text" class="form-control commentVal" id="" value="" />');
+
+            }
+        });
+    });
+</script>

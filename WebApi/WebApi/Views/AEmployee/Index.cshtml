@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <table class="tableData">
+        <tr>
+            <th>EmployeeName</th>
+            <th>Department</th>
+            <th>DateOfJoining</th>
+            <th>PhotoFileName</th>
+        </tr>
+    </table>
+</div>
+<script>
+    $(function () {
+        $.get("GetData", {}, function (data) {
+            var row;
+            $.each(data, function (i, v1) { 
+            row += "<tr><td>" + v1+ "</td></tr>"})
+        });
+    });
+</script>
